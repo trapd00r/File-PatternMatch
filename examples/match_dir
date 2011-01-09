@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+use strict;
+use File::PatternMatch;
+
+my $dir = shift // "$ENV{HOME}/Music";
+my @files = glob("$dir/*");
+my $data = patternmatch(256, @files);
+
+for my $i(sort(keys(%{$data}))) {
+  for my $file(keys(%{$data->{$i}})) {
+    $file =~ s|.+/(.+)$|$1|;
+    printf("%03d: %s\n", $i,  $file);
+  }
+}
