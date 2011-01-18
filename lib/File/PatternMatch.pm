@@ -2,14 +2,14 @@
 package File::PatternMatch;
 
 use vars qw($VERSION);
-$VERSION = '0.030';
+$VERSION = '0.031';
 
 require Exporter;
 @ISA = qw(Exporter);
 our @EXPORT = qw(patternmatch);
 
 use strict;
-use Term::ExtendedColor;
+use Term::ExtendedColor qw(fg bg);
 
 # Yes, this is extremely fugly.
 our %patterns = (
