@@ -2,7 +2,7 @@
 package File::PatternMatch;
 
 use vars qw($VERSION);
-$VERSION = '0.034';
+$VERSION = '0.036';
 
 require Exporter;
 @ISA = qw(Exporter);
@@ -333,12 +333,13 @@ specific patterns. The result might look like:
 
 =head1 SEE ALSO
 
+L<https://github.com/trapd00r/rel>
 
 =head1 AUTHOR
 
   Magnus Woldrich
   CPAN ID: WOLDRICH
-  magnus@trapd00r.se
+  m@japh.se
   http://japh.se
 
 =head1 REPORTING BUGS
@@ -349,11 +350,11 @@ L<https://rt.cpan.org>
 
 L<https://github.com/trapd00r/Foo-Bar/issues>
 
-L<magnus@trapd00r.se>
+L<m@japh.se>
 
 =head1 COPYRIGHT
 
-Copyright 2011 Magnus Woldrich <magnus@trapd00r.se>. This program is free
+Copyright 2011, 2018- Magnus Woldrich <m@japh.se>. This program is free
 software; you may redistribute it and/or modify it under the same terms as
 Perl itself.
 
