@@ -4,6 +4,8 @@
 
 File::PatternMatch - parse media information from filenames
 
+![rel](/extra/rel.png)
+
 # SYNOPSIS
 
     use File::PatternMatch;
@@ -15,7 +17,6 @@ File::PatternMatch - parse media information from filenames
     my $extended_colors = patternmatch(256, @files);
 
 
-![rel](/extra/rel.png)
 
 # DESCRIPTION
 
