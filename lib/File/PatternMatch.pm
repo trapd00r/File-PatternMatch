@@ -2,7 +2,7 @@
 package File::PatternMatch;
 
 use vars qw($VERSION);
-$VERSION = '0.036';
+$VERSION = '0.045';
 
 require Exporter;
 @ISA = qw(Exporter);
