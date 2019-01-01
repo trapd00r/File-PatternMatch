@@ -38,7 +38,7 @@ our %patterns                        = (
     256                             => fg('green16', 'Documentary'),
     dzen                            => "^fg(#87d700)Documentary^fg()",
     none                            => "Documentary",
-    weight                          => 50,
+    weight                          => 80,
   },
   'EPL|WWE|UFC|UEFA|Rugby|La\Liga|
   Superleague|Allsvenskan|
@@ -130,7 +130,7 @@ our %patterns                        = (
     256                             => "\e[38;5;19mWEB\e[0m",
     dzen                            => "^fg(#ffabcd)WEB^fg()",
     none                            => "WEB",
-    weight                          => 20,
+    weight                          => 4,
   },
   'Live_(on|at|in)'                 => {
     256                             => "\e[38;5;181mLive\e[0m",
@@ -235,13 +235,6 @@ our %end = (
   none  => "",
 );
 
-my $foo = patternmatch(256, qw(Dirigenten.S01E08.SWEDiSH.720p.WEBRip.X264-AVRATTNING
-                     De.Dagar.Som.Blommorna.Blommar.S01E01.SWEDiSH.720p.WEBRip.X264-AVRATTN
-                     Best.Of.Skavlan.2018.SWEDiSH.720p.HDTV.x264-CCCAM)
-             );
-
-use Data::Dumper;
-
 
 sub patternmatch {
   my $fmt = shift // 'plain';
@@ -258,7 +251,7 @@ sub patternmatch {
       $file =~ s/($keyword)/$wanted{$keyword}->{$fmt}$1$end{$fmt}/gi;
     }
 
-    for my $pattern(sort{$patterns{$b}{weight} <=> $patterns{$a}{weight}} keys(%patterns)) {
+    for my $pattern(sort{$patterns{$a}{weight} <=> $patterns{$b}{weight}} keys(%patterns)) {
       if($file =~ /$pattern/x) {
         $results{$i}{$file} = $patterns{$pattern}{$fmt};
         next;
