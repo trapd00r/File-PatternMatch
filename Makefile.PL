@@ -5,6 +5,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile1(
   META_MERGE => {
+      q(meta-spec) => { version => 2 },
       resources => {
           repository => {
             type       => 'git',
